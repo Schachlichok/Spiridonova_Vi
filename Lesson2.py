@@ -156,3 +156,45 @@ b = "5"
 print(f"По значению {a == int(b)}")
 print(f"С учетом типа {a == b}")
 print(f"Сравнение {a>int(b)}")
+
+text = "Программирование"
+print (text[0], text[-1])
+
+s = "Автоматизация"
+print (s[3:8])
+
+phrase = "   Hello, World!   "
+print (phrase.strip().lower())
+
+city = "Москва"
+population = 12_000_000
+print (f"В городе {city} живёт {population} человек.")
+
+part1 = "Python"
+part2 = " — это сила!"
+print (part1+part2)
+
+word = "автомобиль"
+result = word.startswith("авто")
+print (result)
+
+file = "document.pdf"
+result = file.endswith(".pdf")
+print(result)
+
+text = "Изучаем Python"
+"Python" in text
+print("Python" in text)
+
+s = "   Hello World!   "
+print (s.strip())
+
+data = "!!ПРИМЕР, СТРОКИ!!"
+print (data.lower().strip("!"))
+
+text = "Я изучаю Python и Python это круто"
+print (text.replace("Python","программирование"))
+
+s = "банан, яблоко, банан, груша, банан"
+print("банан" in s)  # Проверка наличия (True)
+print(s.count("банан"))
