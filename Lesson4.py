@@ -109,3 +109,67 @@ print(alphabet[2:5])
 data = ["яблоко", "груша", "слива", "вишня", "арбуз"]
 data[1:4] = "персик", "апельсин"
 print(data)
+
+shopping_list = []
+shopping_list.extend (["хлеб", "яйца"])
+print (shopping_list)
+
+numbers = [10, 20, 30, 40, 50]
+print (numbers[2:5])
+
+fruits = ["яблоко", "банан", "апельсин", "киви"]
+fruits.remove("банан")
+print (fruits)
+
+tools = ["отвёртка", "дрель", "пила"]
+tools.insert(1,"молоток")
+print(tools)
+
+electronics = ["телефон", "планшет", "ноутбук", "роутер"]
+electronics[1]="телевизор"
+print(electronics)
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+print (list1+list2)
+
+temp_list = [1, 2, 3, 4, 5]
+temp_list.clear()
+print(temp_list)
+
+animals = ["кошка", "собака", "тигр", "жираф"]
+print(animals[0],animals[-1])
+
+letters = ["a", "b", "c", "d", "e"]
+new_letters = letters[2:5]
+new_letters.append("f")
+print (new_letters)
+
+data = [10, 20, 30, 40, 50]
+data[1:4]=25,35
+print(data)
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(matrix[0],matrix[1][1])
+
+items = ["яблоко", "банан", "яблоко", "апельсин", "яблоко"]
+result = items.count("яблоко")
+print(result)
+
+list_a = [1, 2, 3]
+list_b = [4, 5]
+list_a.extend(list_b)
+print(list_a)
+
+original = [1, [2, 3], 4]
+copy = original.copy()
+copy[1] = 100
+print (original,copy)
+
+import copy
+original = [10, [20, 30], 40]
+deep_copy = copy.deepcopy(original)
+deep_copy[1][0] = 99
+deep_copy[1][1] = 99
+deep_copy[0] = 100
+print (original,deep_copy)
