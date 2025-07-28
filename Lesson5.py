@@ -1,85 +1,94 @@
-# 1. Создание класса
-# Задача: Создай пустой класс Robot
-# 2. Добавь в класс Robot общий атрибут
-# material = "metal", который будет одинаковым для всех роботов.
-# 3. Добавь конструктор __init__
-# в класс Robot, чтобы при создании робота можно было задавать его name
-# 4.(из раздела "Методы класса"):
-# Добавь метод greet в класс Robot,
-# который будет возвращать строку "Hello, my name is [name]!", где [name] - это имя робота.
-# 5.Следующая задача (из раздела "Объект класса"):
-# Создай объект класса Robot с именем "C-3PO" и вызови его метод greet
-# 6.Следующая задача (закрепляем параметр self):
-# Добавь в класс Robot метод describe, который будет выводить:
-# "I am made of {MATERIAL} and my name is {name}"
-from email.errors import BoundaryError
+temperature = 25
+if temperature >30:
+    print (Жарко)
+else:
+    print("Приемлемо")
 
+temperature = 25
+result = "Жарко" if temperature >30 else "Приемлемо"
+print (result)
 
-class Robot:
+password = "qwerty123"
+if password == "admin":
+    print("Доступ разрешён")
+else:
+    print("Доступ запрещён")
 
-    MATERIAL = "metal"
-    def __init__(self,name):
-        self.name = name
+password = "qwerty123"
+result = "Доступ разрешён" if password == "admin" else "Доступ запрещён"
+print (result)
 
-    def greet(self):
-        print(f"Hello, my name is {self.name}!")
+score = 85
+if score >= 90:
+    print ("Отлично")
+elif score >= 70:
+    print ("Хорошо")
+else:
+    print ("Удовлетворительно")
 
-    def describe(self):
-        print(f"I am made of {self.MATERIAL} and my name is {self.name}")
+score = 85
+result = "Отлично" if score >= 90 else "Хорошо" if score >= 70 else "Удовлетворительно"
 
-my_robot = Robot("C-3PO")
-my_robot.greet()
-my_robot.describe()
+age = 20
+has_ticket = True
+if age >= 18 and has_ticket:
+    print ("Проход разрешён")
+else:
+    print ("Проход запрещён")
 
-# 7.Создай класс Book с:
-# Атрибутами класса cover_type = "paperback"
-# Конструктором, принимающим title и author
-# Методом info, который возвращает строку "{title} by {author}"
+is_weekend = False
+temperature = 28
+if is_weekend or (temperature > 25 and is_weekend == False ):
+    print ("Идём гулять")
+else:
+    print ("Не идём гулять")
 
-class Book:
-    COVER_TYPE = "paperback"
+is_weekend = False
+temperature = 28
+result = "Идём гулять" if is_weekend or (temperature > 25 and is_weekend == False) else "Не идём гулять"
+print (result)
 
-    def __init__(self,title,author):
-        self.title = title
-        self.author = author
+balance = 100
+result = "Пополнить баланс" if balance < 50 else "Достаточно"
+print (result)
 
-    def info(self):
-        print(f"{self.title} by {self.author}")
+is_member = True
+total_purchase = 12000
+if is_member or total_purchase > 10000:
+    print ("Скидка 10%")
 
-my_book = Book("Дюймовочка","Г.Х.Андерсен")
-my_book.info()
+has_umbrella = True
 
-# Создай класс Wallet:
-# Атрибут класса currency = "RUB" (валюта)
-# Конструктор, принимающий:
-# owner (владелец)
-# balance (баланс, по умолчанию 0)
-# Методы:
-# add_cash(amount) → увеличивает баланс на amount и выводит:
-# "В кошелек добавлено {amount} {currency}"
-# spend_cash(amount) → уменьшает баланс, если хватает денег.
-# Если не хватает → "Недостаточно средств"
-# check_balance() → возвращает строку:
-# "У {owner} в кошельке {balance} {currency}"
+is_raining = True
+temperature = 15
+print("Идем гулять" if (has_umbrella and is_raining) or temperature > 20 else "")
 
-class Wallet:
+is_restricted = False
+if not is_restricted:
+    print ("Доступ открыт")
 
-    CURRENCY = "RUB"
-    def __init__(self,owner,balance):
-        self.owner = owner
-        self.balance = balance
+score = 85
+if score>=60:
+    print ("Проходной балл")
 
-    def add_cash(self):
-        print(f"В кошелек добавлено столько-то {self.CURRENCY}")
+age = 17
+if age >=18:
+    print ("Вход разрешён")
+else:
+    print ("Вход запрещён")
 
-    @staticmethod
-    def spend_cash():
-        print(f"Недостаточно средств")
+temperature = -5
+if temperature > 30:
+    print ("Жарко")
+elif temperature < 10:
+    print ("Холодно")
+else:
+    print ("Тепло")
 
-    def check_balance (self):
-        print(f" У {self.owner} в кошельке {self.balance} {self.CURRENCY}")
+has_ticket = True
+is_weekend = False
+if has_ticket and  not is_weekend:
+    print ("Идём в кино")
 
-my_wallet = Wallet ("я",222)
-my_wallet.add_cash()
-my_wallet.spend_cash()
-my_wallet.check_balance()
+balance = 45
+print ("Пополнить баланс" if balance < 50 else "Остаток достаточный")

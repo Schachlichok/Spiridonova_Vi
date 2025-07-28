@@ -1,77 +1,89 @@
-# Задача 1
-# Раздел: Простое наследование
-# Создай:Базовый класс Vehicle с методом start_engine(), который выводит "Двигатель запущен"
-# Дочерний класс Car, который наследует Vehicle и добавляет метод drive(), выводящий "Машина едет"
+# Задача 1 (Создание словаря)
+# Создай словарь student с ключами: "name" (значение — твоё имя)
+# и "age" (твой возраст). Выведи словарь.
 
-class Vehicle:
-    def start_engine (self):
-        print ("Двигатель запущен")
+student = {"name": "Виктория", "age": 25}
+print (student)
 
-class Car(Vehicle):
-    def drive(self):
-        print ("Машина едет")
-my_car = Car ()
-my_car.start_engine ()
-my_car.drive()
+# Задача 2 (Доступ к элементам по ключу)
+# Дан словарь:
+# book = {"title": "Гарри Поттер", "author": "Дж. Роулинг", "year": 1997}
+# Выведи значение ключа "author".
 
-# Задача 2
-# Раздел: Переопределение методов
-# Создай:
-# Базовый класс Animal с методом make_sound(), который выводит "Животное издает звук"
-# Дочерний класс Dog, который:
-# Наследует Animal
-# Переопределяет make_sound() → выводит "Гав-гав!"
+book = {"title": "Гарри Поттер", "author": "Дж. Роулинг", "year": 1997}
+print (book["author"])
 
-class Animal:
-    def make_sound (self) :
-        print ("Животное издает звук")
-class Dog(Animal):
-    def make_sound (self) :
-        print ("Гав-гав")
-my_dog = Animal ()
-my_dog.make_sound ()
-my_dog = Dog ()
-my_dog.make_sound ()
+# Задача 3 (Добавление элемента)
+# Дан словарь:
+# car = {"brand": "Toyota", "model": "Camry"}
+# Добавь ключ "year" со значением 2020 и выведи обновлённый словарь.
 
-# Задача 3
-# Раздел: Доступ к атрибутам родителя
-# Модифицируй предыдущие классы:
-# В базовый класс Animal добавь атрибут species = "животное" в теле класса
-# Дочерний класс Dog должен:
-# Сохранять переопределенный метод make_sound() (выводит "Гав-гав")
-# Добавить метод show_species(), который выводит:
-# "Я собака, но я тоже {species}" (где species — атрибут родителя)
-# Условия:
-# Не создавай species в классе Dog — обращайся к родительскому атрибуту
-# Не используй super() (пока что)
+car = {"brand": "Toyota", "model": "Camry"}
+car["year"] = 2020
+print (car)
 
-class Animal:
-    SPECIES = "животное"
-    def make_sound (self) :
-        print ("Животное издает звук")
-class Dog(Animal):
-    def make_sound (self) :
-        print ("Гав-гав")
-    def show_species (self) :
-        print (f"Я собака, но я тоже {self.SPECIES} ")
-my_dog = Dog ()
-my_dog.show_species ()
+# Задача 4 (Удаление элемента)
+# Дан словарь:
+# person = {"name": "Алексей", "age": 30, "city": "Москва"}
 
-# Задача 4
-# Условие:
-# Создай родительский класс Vehicle с методом show_info(), который печатает:
-# "Это транспортное средство: {self.name}".
-# Создай дочерний класс Car, который наследуется от Vehicle.
-# В классе Car определи атрибут name = "Toyota".
-# Не переопределяй метод show_info() в Car – он должен остаться из родительского класса.
-# Требование:
-# Создай экземпляр класса Car и вызови его метод show_info(). В результате должен выводиться текст:
-# "Это транспортное средство: Toyota".
+person = {"name": "Алексей", "age": 30, "city": "Москва"}
+del person["age"]
+print(person)
 
-class Vehicle:
-    def show_info (self):
-        print (f"Это транспортное средство: {self.NAME}")
-class Car(Vehicle):
-    NAME = "Toyota"
-my_car = Car ()
-my_car.show_info ()
+# Задача 5 (Проверка наличия ключа)
+# Дан словарь:
+# device = {"type": "smartphone", "brand": "Xiaomi", "os": "Android"}
+
+device = {"type": "smartphone", "brand": "Xiaomi", "os": "Android"}
+print( "os" in device)
+
+# Задача 6 (Получение всех ключей)
+# Дан словарь:
+# country = {"name": "Франция", "capital": "Париж", "language": "французский"}
+
+country = {"name": "Франция", "capital": "Париж", "language": "французский"}
+print (country.keys())
+
+# Задача 7 (Обновление значения)
+# Дан словарь:
+# product = {"name": "Ноутбук", "price": 50000, "in_stock": True}
+# Измени значение ключа "price" на 45000 и выведи обновлённый словарь.
+
+product = {"name": "Ноутбук", "price": 50000, "in_stock": True}
+product["price"]=45000
+print(product)
+
+# Задача 8 (Получение значений)
+# Дан словарь:
+# movie = {"title": "Интерстеллар", "director": "Нолан", "year": 2014}
+# Выведи все значения этого словаря в виде списка.
+
+movie = {"title": "Интерстеллар", "director": "Нолан", "year": 2014}
+print(movie.values())
+
+# Задача 9 (Проверка наличия значения)
+# Дан словарь:
+# fruit = {"name": "Яблоко", "color": "зелёное", "weight": 150}
+# Проверь, есть ли в словаре значение "зелёное", и выведи True или False.
+
+fruit = {"name": "Яблоко", "color": "зелёное", "weight": 150}
+print("зелёное" in fruit.values())
+
+# Задача 10 (Добавление через update())
+# Дан словарь:
+# user = {"name": "Мария", "email": "maria@example.com"}
+# Добавь к нему ключ "age" со значением 28 через метод update() и выведи обновлённый словарь.
+
+user = {"name": "Мария", "email": "maria@example.com"}
+user["age"] = 28
+print(user)
+
+# Задача 11 (Метод pop())
+# Дан словарь:
+# data = {"id": 101, "status": "active", "count": 42}
+# Удали ключ "count" через pop() и выведи удалённое значение.
+
+data = {"id": 101, "status": "active", "count": 42}
+count = data.pop("count","Count not found")
+print(count)
+
