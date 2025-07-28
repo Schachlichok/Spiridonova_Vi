@@ -1,88 +1,83 @@
-# Задача 1 (Создание словаря)
-# Создай словарь student с ключами: "name" (значение — твоё имя)
-# и "age" (твой возраст). Выведи словарь.
+# file = open("Message", "w", encoding="utf-8")
+# file.write("Обновление записи\nПрошло успешно")
 
-student = {"name": "Виктория", "age": 25}
-print (student)
+# file = open("Message", "r", encoding="utf-8")
+# # print(file.readline())
+#
+# for line in file.readlines():
+#     print(line)
 
-# Задача 2 (Доступ к элементам по ключу)
-# Дан словарь:
-# book = {"title": "Гарри Поттер", "author": "Дж. Роулинг", "year": 1997}
-# Выведи значение ключа "author".
+# file = open("Message", "a", encoding="utf-8")
+# file.write("\nНовая строка успешно добавлена")
 
-book = {"title": "Гарри Поттер", "author": "Дж. Роулинг", "year": 1997}
-print (book["author"])
+# file = open("Message", "r+", encoding="utf-8")
+# for line in file.readlines():
+#     print(line)
+# file.seek(0) # номер элемента откуда читать
+# print (file.read())
+# #
+# file.write("Начало")
+# file.close()
 
-# Задача 3 (Добавление элемента)
-# Дан словарь:
-# car = {"brand": "Toyota", "model": "Camry"}
-# Добавь ключ "year" со значением 2020 и выведи обновлённый словарь.
+# Обязательно нужен контекстный менеджер, для предотвращения зависшего
+# открытого файла и закрытия файла при выходе из блока
 
-car = {"brand": "Toyota", "model": "Camry"}
-car["year"] = 2020
-print (car)
+# with open("Message", "r+", encoding="utf-8") as file:
+#   print(file.read())
 
-# Задача 4 (Удаление элемента)
-# Дан словарь:
-# person = {"name": "Алексей", "age": 30, "city": "Москва"}
+# with open("Message", "r+", encoding="utf-8") as file:
+#     for line in file:
+#         print(line.strip())
 
-person = {"name": "Алексей", "age": 30, "city": "Москва"}
-del person["age"]
-print(person)
+# with open("Message", "w") as file:
+#     file.write("Привет, мир") # Записываем строку в файл
+#     file.write("Это пример записи в файл.") # Добавляем еще одну строку
 
-# Задача 5 (Проверка наличия ключа)
-# Дан словарь:
-# device = {"type": "smartphone", "brand": "Xiaomi", "os": "Android"}
+# with open("Message", "r") as file:
+#     content = file.read() # Читаем содержимое файла
+#     print(content)
 
-device = {"type": "smartphone", "brand": "Xiaomi", "os": "Android"}
-print( "os" in device)
+# Задача 1 (Чтение файла)
+# Дан файл notes.txt с текстом:
+# Первая строка
+# Вторая строка
+# Напиши код, который выводит содержимое всего файла на экран.
+#
+# file = open("notes.txt", "r", encoding="utf-8")
+# print(file.read())
+# file.close()
 
-# Задача 6 (Получение всех ключей)
-# Дан словарь:
-# country = {"name": "Франция", "capital": "Париж", "language": "французский"}
+# Задача 2 (Запись в файл)
+# Создай файл output.txt и запиши в него строку: "Тест записи файла"
 
-country = {"name": "Франция", "capital": "Париж", "language": "французский"}
-print (country.keys())
+with open("output.txt", "w+", encoding="utf-8") as file:
+    file.write("Тест записи файла")
+    file.seek(0)
+    print(file.read())
 
-# Задача 7 (Обновление значения)
-# Дан словарь:
-# product = {"name": "Ноутбук", "price": 50000, "in_stock": True}
-# Измени значение ключа "price" на 45000 и выведи обновлённый словарь.
+# Задача 3 (Добавление в файл)
+# Дополни файл output.txt строкой "\nДополнительная строка"
+# без перезаписи всего содержимого.
 
-product = {"name": "Ноутбук", "price": 50000, "in_stock": True}
-product["price"]=45000
-print(product)
+with open("output.txt", "a+", encoding="utf-8") as file:
+    file.write("\nДополнительная строка")
+    file.seek(0)
+    print(file.read())
 
-# Задача 8 (Получение значений)
-# Дан словарь:
-# movie = {"title": "Интерстеллар", "director": "Нолан", "year": 2014}
-# Выведи все значения этого словаря в виде списка.
+# Задача 4 (Чтение по строкам)
+# Дан файл data.txt с содержимым:
 
-movie = {"title": "Интерстеллар", "director": "Нолан", "year": 2014}
-print(movie.values())
+# with open ("data.txt", "r", encoding="utf-8") as file:
+#     for line in file:
+#         print("Запись:", line.strip())
 
-# Задача 9 (Проверка наличия значения)
-# Дан словарь:
-# fruit = {"name": "Яблоко", "color": "зелёное", "weight": 150}
-# Проверь, есть ли в словаре значение "зелёное", и выведи True или False.
+# Задача 5 (Контекстный менеджер и запись)
+# Создай новый файл log.txt и запиши в него три строки (каждая через отдельный write()):
 
-fruit = {"name": "Яблоко", "color": "зелёное", "weight": 150}
-print("зелёное" in fruit.values())
+with open("log.txt", "w+", encoding="utf-8") as file:
+    file.write("1: Начало работы")
+    file.write("\n2: Процесс выполнения")
+    file.write("\n3: Конец работы")
+    file.seek(0)
+    print(file.read())
 
-# Задача 10 (Добавление через update())
-# Дан словарь:
-# user = {"name": "Мария", "email": "maria@example.com"}
-# Добавь к нему ключ "age" со значением 28 через метод update() и выведи обновлённый словарь.
-
-user = {"name": "Мария", "email": "maria@example.com"}
-user["age"] = 28
-print(user)
-
-# Задача 11 (Метод pop())
-# Дан словарь:
-# data = {"id": 101, "status": "active", "count": 42}
-# Удали ключ "count" через pop() и выведи удалённое значение.
-
-data = {"id": 101, "status": "active", "count": 42}
-count = data.pop("count","Count not found")
-print(count)
