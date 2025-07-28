@@ -52,3 +52,60 @@ def my_string():
 
 my_string()
 
+# 1. Базовые функции
+# Задача 1
+# Напиши функцию is_even(num), которая возвращает True, если число num чётное, и False — если нечётное.
+
+def is_even(num):
+    return num % 2 == 0
+
+print (is_even(6))
+print (is_even(7))
+
+# 2. Аргументы по умолчанию
+# Задача 2
+# Напиши функцию create_user(name, age, city="Москва"), которая возвращает строку:
+# "Пользователь [name], [age] лет, город [city]".
+
+def create_user(name, age, city="Москва"):
+  return f"Пользователь {name}, {age} лет, город {city}"
+
+print (create_user("Lera", 94))
+print (create_user("Lora", 90, "Paris"))
+
+# 3. Возврат нескольких значений
+# # Задача 3
+# # Напиши функцию min_max(numbers), которая принимает список чисел и возвращает кортеж (минимум, максимум).
+
+def min_max(numbers):
+    return min(numbers), max(numbers)
+numbers = [9, 8 , 6 , 3]
+print (min_max(numbers))
+
+# 4. Декораторы
+# Задача 4
+# Напиши декоратор @bold, который оборачивает возвращаемую строку функции в HTML-тег <b>.
+
+def bold(func):
+    def wrapper():
+        return f"<b>{func()}</b>"
+    return wrapper
+
+@bold
+def message():
+    return "This is string"
+
+print(message())
+
+# Задача 5
+# Создай функцию square, которая принимает число и возвращает его квадрат.
+
+def square(num):
+    print (num**2)
+square(6)
+
+# Задача 6 (Функция, возвращающая словарь)
+# Напиши функцию create_user_dict(), которая:
+# Принимает три аргумента: name (строка), age (число), city (строка, по умолчанию "Москва").
+# Возвращает словарь
+
