@@ -1,83 +1,85 @@
-# file = open("Message", "w", encoding="utf-8")
-# file.write("Обновление записи\nПрошло успешно")
+# 1. Создание класса
+# Задача: Создай пустой класс Robot
+# 2. Добавь в класс Robot общий атрибут
+# material = "metal", который будет одинаковым для всех роботов.
+# 3. Добавь конструктор __init__
+# в класс Robot, чтобы при создании робота можно было задавать его name
+# 4.(из раздела "Методы класса"):
+# Добавь метод greet в класс Robot,
+# который будет возвращать строку "Hello, my name is [name]!", где [name] - это имя робота.
+# 5.Следующая задача (из раздела "Объект класса"):
+# Создай объект класса Robot с именем "C-3PO" и вызови его метод greet
+# 6.Следующая задача (закрепляем параметр self):
+# Добавь в класс Robot метод describe, который будет выводить:
+# "I am made of {MATERIAL} and my name is {name}"
+from email.errors import BoundaryError
 
-# file = open("Message", "r", encoding="utf-8")
-# # print(file.readline())
-#
-# for line in file.readlines():
-#     print(line)
 
-# file = open("Message", "a", encoding="utf-8")
-# file.write("\nНовая строка успешно добавлена")
+class Robot:
 
-# file = open("Message", "r+", encoding="utf-8")
-# for line in file.readlines():
-#     print(line)
-# file.seek(0) # номер элемента откуда читать
-# print (file.read())
-# #
-# file.write("Начало")
-# file.close()
+    MATERIAL = "metal"
+    def __init__(self,name):
+        self.name = name
 
-# Обязательно нужен контекстный менеджер, для предотвращения зависшего
-# открытого файла и закрытия файла при выходе из блока
+    def greet(self):
+        print(f"Hello, my name is {self.name}!")
 
-# with open("Message", "r+", encoding="utf-8") as file:
-#   print(file.read())
+    def describe(self):
+        print(f"I am made of {self.MATERIAL} and my name is {self.name}")
 
-# with open("Message", "r+", encoding="utf-8") as file:
-#     for line in file:
-#         print(line.strip())
+my_robot = Robot("C-3PO")
+my_robot.greet()
+my_robot.describe()
 
-# with open("Message", "w") as file:
-#     file.write("Привет, мир") # Записываем строку в файл
-#     file.write("Это пример записи в файл.") # Добавляем еще одну строку
+# 7.Создай класс Book с:
+# Атрибутами класса cover_type = "paperback"
+# Конструктором, принимающим title и author
+# Методом info, который возвращает строку "{title} by {author}"
 
-# with open("Message", "r") as file:
-#     content = file.read() # Читаем содержимое файла
-#     print(content)
+class Book:
+    COVER_TYPE = "paperback"
 
-# Задача 1 (Чтение файла)
-# Дан файл notes.txt с текстом:
-# Первая строка
-# Вторая строка
-# Напиши код, который выводит содержимое всего файла на экран.
-#
-# file = open("notes.txt", "r", encoding="utf-8")
-# print(file.read())
-# file.close()
+    def __init__(self,title,author):
+        self.title = title
+        self.author = author
 
-# Задача 2 (Запись в файл)
-# Создай файл output.txt и запиши в него строку: "Тест записи файла"
+    def info(self):
+        print(f"{self.title} by {self.author}")
 
-with open("output.txt", "w+", encoding="utf-8") as file:
-    file.write("Тест записи файла")
-    file.seek(0)
-    print(file.read())
+my_book = Book("Дюймовочка","Г.Х.Андерсен")
+my_book.info()
 
-# Задача 3 (Добавление в файл)
-# Дополни файл output.txt строкой "\nДополнительная строка"
-# без перезаписи всего содержимого.
+# Создай класс Wallet:
+# Атрибут класса currency = "RUB" (валюта)
+# Конструктор, принимающий:
+# owner (владелец)
+# balance (баланс, по умолчанию 0)
+# Методы:
+# add_cash(amount) → увеличивает баланс на amount и выводит:
+# "В кошелек добавлено {amount} {currency}"
+# spend_cash(amount) → уменьшает баланс, если хватает денег.
+# Если не хватает → "Недостаточно средств"
+# check_balance() → возвращает строку:
+# "У {owner} в кошельке {balance} {currency}"
 
-with open("output.txt", "a+", encoding="utf-8") as file:
-    file.write("\nДополнительная строка")
-    file.seek(0)
-    print(file.read())
+class Wallet:
 
-# Задача 4 (Чтение по строкам)
-# Дан файл data.txt с содержимым:
+    CURRENCY = "RUB"
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
 
-# with open ("data.txt", "r", encoding="utf-8") as file:
-#     for line in file:
-#         print("Запись:", line.strip())
+    def add_cash(self):
+        print(f"В кошелек добавлено столько-то {self.CURRENCY}")
 
-# Задача 5 (Контекстный менеджер и запись)
-# Создай новый файл log.txt и запиши в него три строки (каждая через отдельный write()):
+    @staticmethod
+    def spend_cash():
+        print(f"Недостаточно средств")
 
-with open("log.txt", "w+", encoding="utf-8") as file:
-    file.write("1: Начало работы")
-    file.write("\n2: Процесс выполнения")
-    file.write("\n3: Конец работы")
-    file.seek(0)
-    print(file.read())
+    def check_balance (self):
+        print(f" У {self.owner} в кошельке {self.balance} {self.CURRENCY}")
 
+my_wallet = Wallet ("меня",222)
+my_wallet.add_cash()
+my_wallet.spend_cash()
+my_wallet.check_balance()
