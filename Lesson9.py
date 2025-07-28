@@ -109,3 +109,8 @@ square(6)
 # Принимает три аргумента: name (строка), age (число), city (строка, по умолчанию "Москва").
 # Возвращает словарь
 
+def create_user_dict(name,age,city="Москва"):
+    return { "name": name ,
+"age": age,
+"city": city}
+print (create_user_dict("Vova", 54))
