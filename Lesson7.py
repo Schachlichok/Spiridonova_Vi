@@ -1,67 +1,142 @@
-temperature = 25
-if temperature >30:
-    print (Жарко)
-else:
-    print("Приемлемо")
+# Задача 1 (Цикл for)
+# Дан список:
+# animals = ["кошка", "собака", "хомяк"]
+# Выведи каждый элемент списка в формате:
+# "Животное: [элемент]".
 
-temperature = 25
-result = "Жарко" if temperature >30 else "Приемлемо"
-print (result)
+animals = ["кошка", "собака", "хомяк"]
+for animal in animals:
+    print ("Животное:", animal)
 
-password = "qwerty123"
-if password == "admin":
-    print("Доступ разрешён")
-else:
-    print("Доступ запрещён")
+# Следующая задача:
+# Задача 2 (Функция range)
+# Используя цикл for и функцию range,
+# выведи числа от 5 до 10 включительно, каждое с новой строки.
 
-password = "qwerty123"
-result = "Доступ разрешён" if password == "admin" else "Доступ запрещён"
-print (result)
+for number in range (5, 11):
+    print (number)
 
-score = 85
-if score >= 90:
-    print ("Отлично")
-elif score >= 70:
-    print ("Хорошо")
-else:
-    print ("Удовлетворительно")
+# Задача 3 (Цикл while)
+# Дана переменная:
+# count = 3
+# Напиши цикл while, который выводит числа от count до 0 (включительно) и останавливается.
 
-score = 85
-result = "Отлично" if score >= 90 else "Хорошо" if score >= 70 else "Удовлетворительно"
+count = 3
+while count >=0:
+    print(count)
+    count -=1
 
-age = 20
-has_ticket = True
-if age >= 18 and has_ticket:
-    print ("Проход разрешён")
-else:
-    print ("Проход запрещён")
+# Задача 4 (Оператор break)
+# Дан список:
+# numbers = [1, 3, 5, 7, 9, 2, 4, 6]
+# Напиши цикл for, который:
+# Перебирает элементы списка.
+# Прерывается (break), если встречает чётное число.
+# Выводит каждое число до прерывания.
 
-is_weekend = False
-temperature = 28
-if is_weekend or (temperature > 25 and is_weekend == False ):
-    print ("Идём гулять")
-else:
-    print ("Не идём гулять")
+numbers = [1, 3, 5, 7, 9, 2, 4, 6]
+for number in numbers:
+    print(number)
+    if number % 2  != 0:
+        break
 
-is_weekend = False
-temperature = 28
-result = "Идём гулять" if is_weekend or (temperature > 25 and is_weekend == False) else "Не идём гулять"
-print (result)
+# Задача 5 (Итерация по строке)
+# Дана строка:
+# word = "Питон"
+# Выведи каждую букву строки на отдельной строке в обратном порядке (от последней к первой).
 
-balance = 100
-result = "Пополнить баланс" if balance < 50 else "Достаточно"
-print (result)
+word = "Питон"
+for element in word[::-1]:
+    print (element)
 
-is_member = True
-total_purchase = 12000
-if is_member or total_purchase > 10000:
-    print ("Скидка 10%")
+# Задача 6 (range с шагом)
+# Используя цикл for и range, выведи все чётные числа от 2 до 10 включительно с шагом 2.
 
-has_umbrella = True
-is_raining = True
-temperature = 15
-print("Идем гулять" if (has_umbrella and is_raining) or temperature > 20 else "")
+for number in range(2, 12, 2):
+   print (number)
 
-is_restricted = False
-if not is_restricted:
-    print ("Доступ открыт")
+# 1. Цикл for (итерация по списку)
+# Задача 1
+# Дан список:
+# fruits = ["груша", "яблоко", "слива"]
+# Выведи каждый элемент списка в формате:
+# "Фрукт: [название]" (каждое с новой строки).
+
+fruits = ["груша", "яблоко", "слива"]
+for fruit in fruits:
+    print (f"Фрукт : {fruit} ")
+
+# 2. Функция range()
+# Задача 2
+# Используя range(), выведи числа от 10 до 1 (включительно) в обратном порядке.
+
+for number in range (10, 0, -1):
+    print (number)
+
+# 3. Цикл while
+# Задача 3
+# Дана переменная:
+# counter = 0
+# Напиши цикл while, который выводит числа от counter до 5 (включительно) и останавливается.
+
+counter = 0
+while counter <=5:
+    print (counter)
+    counter +=1
+
+# 4. Оператор break
+# Задача 4
+# Дан список:
+# numbers = [3, 7, 9, 4, 6]
+# Напиши цикл for, который:
+# Выводит каждое число.
+# Прерывается (break), если встречает число больше 8.
+
+numbers = [3, 7, 9, 4, 6]
+for number in numbers:
+    if number <= 8:
+        print (number)
+
+
+# 5. Итерация по строке
+# Задача 5
+# Дана строка:
+# word = "программирование"
+# Выведи каждую вторую букву строки (начиная с первой).
+
+word = "программирование"
+for element in word[::2]:
+    print (element)
+
+# 6. Комбинированная задача
+# Задача 6
+# Напиши код, который:
+# Использует цикл for и range().
+# Выводит квадраты чисел от 1 до 5 (включительно).
+
+for number in range(1, 6):
+    print (number**2)
+
+
+# Задача 1 (Символ _ как переменная-заполнитель)
+# Дан список чисел:
+# numbers = [10, 20, 30, 40]
+# Используя цикл for и символ _ (как заполнитель для неиспользуемой переменной),
+# выведи только значения элементов списка (без индексов).
+
+numbers = [10, 20, 30, 40]
+for _ in numbers:
+    print(_)
+
+# Задача 2 (Цикл while с суммой ввода пользователя)
+# Напиши код, который:
+# Запрашивает у пользователя числа через input() в цикле while.
+# Суммирует все введённые числа.
+# Останавливается, когда сумма превысит 100.
+# Выводит итоговую сумму.
+
+sum = 0
+while sum <= 100:
+    num = int(input("Введите число:"))
+    sum += num
+    print(sum)
