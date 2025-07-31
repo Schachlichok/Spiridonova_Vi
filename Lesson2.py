@@ -158,44 +158,105 @@ print(f"По значению {a == int(b)}")
 print(f"С учетом типа {a == b}")
 print(f"Сравнение {a>int(b)}")
 
-text = "Программирование"
-print (text[0], text[-1])
+# Задача 1 (Объявление переменных)
+# Объяви три переменные:
+# age (целое число)
+# name (строка)
+# is_active (логическое значение)
+# Присвой им произвольные корректные значения.
 
-s = "Автоматизация"
-print (s[3:8])
+age = 15
+name = "Kenny"
+is_active = True
 
-phrase = "   Hello, World!   "
-print (phrase.strip().lower())
+# Задача 2 (Типы данных)
+# Даны значения:
+# value1 = 3.14
+# value2 = "123"
+# Определи и выведи тип каждой переменной.
 
-city = "Москва"
-population = 12_000_000
-print (f"В городе {city} живёт {population} человек.")
+value1 = 3.14  # type float
+value2 = "123" # type string
+print (value1, type(value1))
+print (value2, type(value2))
 
-part1 = "Python"
-part2 = " — это сила!"
-print (part1+part2)
+# Задача 3 (Преобразование типов)
+# Даны значения:
+# str_num = "100"
+# float_num = 5.7
+# Преобразуй:
+# str_num в целое число
+# float_num в строку
 
-word = "автомобиль"
-result = word.startswith("авто")
-print (result)
+str_num = "100"
+float_num = 5.7
+int_str_num = int(str_num)
+str_float_num = str(float_num)
+print(int_str_num, type(int_str_num), str_float_num, type(str_float_num))
 
-file = "document.pdf"
-result = file.endswith(".pdf")
-print(result)
+# Задача 4 (Арифметические операции)
+# Даны числа:
+# x = 15
+# y = 4
+# Вычисли и выведи:
+# Результат деления x на y
+# Остаток от деления x на y
 
-text = "Изучаем Python"
-"Python" in text
-print("Python" in text)
+x = 15
+y = 4
+print (x/y, x%y)
 
-s = "   Hello World!   "
-print (s.strip())
+# Задача 5 (Операции сравнения)
+# Даны переменные:
+# a = 20
+# b = 35
+# Выведи результаты:
+# a больше b
+# a не равно b
 
-data = "!!ПРИМЕР, СТРОКИ!!"
-print (data.lower().strip("!"))
+a = 20
+b = 35
+print (a>b, a!=b)
 
-text = "Я изучаю Python и Python это круто"
-print (text.replace("Python","программирование"))
+# Задача 6 (Переопределение переменной)
+# Создай переменную count со значением 10
+# Переопредели её значение на 15
+# Выведи новое значение
 
-s = "банан, яблоко, банан, груша, банан"
-print("банан" in s)  # Проверка наличия (True)
-print(s.count("банан"))
+count = 10
+print (count, id(count))
+count = 15
+print (count, id(count))
+
+# Задача 7 (Именование переменных)
+# Придумай корректные имена для переменных, которые будут хранить:
+# Количество студентов
+# Цену товара
+# Флаг наличия скидки
+
+number_of_students = 10
+product_price = 15
+discount_flag = 1
+
+# Задача 8 (Работа с bool)
+# Даны условия:
+# 5 > 3
+# "hello" == "world"
+# Выведи результаты этих сравнений.
+
+print ( 5 > 3, "hello" == "world")
+
+# Преобразование списка из кортежа в словарь
+my_list_of_tuples = [("name","Kate"),("age",21)]
+dictionary = dict(my_list_of_tuples)
+print (dictionary)
+
+# Задача (Обмен значений переменных)
+# Даны переменные:
+# x = 5
+# y = 10
+
+x = 5
+y = 10
+x,y= y,x
+print(x,y)
