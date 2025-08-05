@@ -1,5 +1,6 @@
 # Задача 1 (Создание списка)
 # Создай список fruits с тремя фруктами: "яблоко", "банан", "апельсин". Выведи его на экран.
+from os import access
 
 fruits = ["яблоко", "банан", "апельсин"]
 print(fruits)
@@ -345,3 +346,73 @@ print(temp)
 temp = [True, None, [1, 2], "text"]
 del temp[:]
 print(temp)
+
+numbers = [10, 20, 30]
+numbers.append(40)
+numbers[0] = 5
+print(numbers)
+
+colors = ["красный", "синий", "зелёный"]
+colors.insert(1,"желтый")
+print(colors)
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+merged_list = list1+list2
+print(merged_list)
+
+books = ["Гарри Поттер", "Война и мир", "1984", "Мастер и Маргарита"]
+books[1] = "Преступление и наказание"
+print(books)
+
+temp = [12, 15, 10, 9, 20]
+temp.clear()
+print(temp)
+
+shopping = ["хлеб", "молоко"]
+shopping.append("яйца")
+print(shopping)
+
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(numbers[2:7])
+
+data = [10, 20, 30, 40, 50, 60]
+data[1:3] = [99,88]
+print(data)
+
+part1 = ["a", "b", "c"]
+part2 = [1, 2, 3]
+sum_part = part1+part2
+print(sum_part)
+
+languages = ["Python", "Ruby", "Java", "C++", "Go"]
+del languages[2]
+print(languages)
+
+colors = ["red", "blue", "green"]
+colors.insert(1,"yellow")
+print(colors)
+
+items = ["apple", "banana", "apple", "orange", "banana", "apple"]
+print(len(items))
+
+original = [1, 2, 3, 4]
+new_list = original.copy()
+print(new_list)
+
+items = ["apple", "banana", "apple", "orange", "banana", "apple"]
+print(items.count("apple"))
+
+trees = ["дуб", "берёза", "сосна", "клён"]
+trees.pop()
+print(trees)
+
+languages = ["Python", "Java", "JavaScript", "C#"]
+assert "Java" in languages
+
+import copy
+original = [[1, 2], [3, 4]]
+deep_copy = copy.deepcopy(original)
+deep_copy[0]=[99,100]
+print(original)
+print(deep_copy)
