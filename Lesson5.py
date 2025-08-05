@@ -92,3 +92,77 @@ if has_ticket and  not is_weekend:
 
 balance = 45
 print ("Пополнить баланс" if balance < 50 else "Остаток достаточный")
+
+age = 18
+if age>=18:
+    print("Доступ разрешён")
+else:
+    print("Доступ запрещён")
+
+num = 8
+if num%2 ==0 and num>0:
+    print("Число четное и положительное")
+elif num%2 == 0 and num<0:
+    print("Число четное и отрицательное")
+elif num%2 != 0 and num>0:
+    print("Число нечетное и положительное")
+elif num%2 != 0 and num<0:
+    print("Число нечетное и отрицательное")
+else:
+   print("Число является нулем")
+# //////////////////
+
+num = 8
+if num%2 ==0:
+    print("Число четное")
+else:
+    print("Число нечетное")
+if num>0:
+    print("Число положительное")
+# //////////////////
+
+has_ticket = True
+is_weekday = False
+if has_ticket or (not is_weekday and has_ticket):
+    print("Можно в кино")
+
+x = 10
+y = 5
+z = 15
+if x>y and x>z:
+    print("x наибольший из трёх чисел")
+if y < z < x:
+    print("z среднее по величине число")
+
+balance = 50
+status =  "Пополнить баланс" if balance<100 else "Достаточно"
+print (status)
+
+text = "Python"
+print(text.startswith("Pyt"))
+print(len(text) >5)
+
+grade = 4
+if grade == 5:
+    print("Отлично")
+elif grade == 4:
+    print("Хорошо")
+elif grade == 3:
+    print("Удовлетворительно")
+else:
+    print("Неуд")
+
+
+number = 25
+if 20<=number<=30:
+    print("В диапазоне")
+
+items = (10, 20, 30)
+result ="Есть" if 20 in items else "Нет"
+print(result)
+
+is_member = True
+total_purchase = 1500
+result = "Скидка 10%" if is_member and total_purchase>1000 else "Нет скидки"
+print(result)
+
