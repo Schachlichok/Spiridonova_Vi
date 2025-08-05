@@ -140,3 +140,31 @@ while sum <= 100:
     num = int(input("Введите число:"))
     sum += num
     print(sum)
+
+fruits = ["яблоко", "банан", "апельсин"]
+for fruit in fruits:
+    print(fruit)
+
+count = 3
+while count >=0:
+    print(count)
+    count-=1
+
+numbers = [1, 3, 5, 7, 9, 2, 4, 6]
+for number in numbers:
+    if number%2!=0:
+        print(number)
+    else:
+        break
+
+for element in range(10,21,2):
+    print(element)
+
+word = "автоматизация"
+for element in word[::4]:
+    print(element)
+
+temperature = 95
+while temperature>=70:
+    print(temperature)
+    temperature -=5
