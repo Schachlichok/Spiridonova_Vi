@@ -87,3 +87,39 @@ data = {"id": 101, "status": "active", "count": 42}
 count = data.pop("count","Count not found")
 print(count)
 
+student = {"name": "Viola", "age": "30", "courses": "русский, математика, литература"}
+print(student)
+
+book = {"title": "1984", "author": "Оруэлл", "year": 1949}
+author = book["author"]
+
+student = {"name": "Nicola", "age": 14, "courses": ["Python", "Автоматизация"]}
+print(student)
+
+car = {"brand": "Toyota", "model": "Corolla", "year": 2020}
+print(car["model"])
+
+book = {"title": "1984", "author": "Оруэлл"}
+book["year"] = 1949
+print(book)
+
+pc = {"brand": "HP", "ram": 16, "cpu": "Intel", "year": 2022}
+del pc["year"]
+print(pc)
+
+pc = {"brand": "HP", "ram": 16, "cpu": "Intel", "year": 2022}
+pc.pop("year")
+print(pc)
+
+phone = {"model": "iPhone 13", "color": "black", "storage": 128}
+print(phone.keys())
+print(phone.values())
+
+laptop = {"brand": "Lenovo", "os": "Windows", "price": 750}
+print("os" in laptop)
+if "os" in laptop:
+    print(laptop["os"])
+
+profile = {"name": "Alex", "age": 30}
+profile["city"] = "Москва"
+profile["job"] = "Инженер"
