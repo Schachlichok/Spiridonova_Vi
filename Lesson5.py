@@ -166,3 +166,33 @@ total_purchase = 1500
 result = "Скидка 10%" if is_member and total_purchase>1000 else "Нет скидки"
 print(result)
 
+age = 18
+if age>=18:
+    print("Доступ разрешён")
+
+temperature = -5
+if temperature >= 0:
+    print("Вода жидкая")
+else:
+    print("Вода твердая")
+
+hour = 14  # час дня (от 0 до 23)
+if 5<=hour<=11:
+    print("Утро")
+elif 12<=hour<=17:
+    print("День")
+elif 18<=hour<=21:
+    print("Вечер")
+else:
+    print("Ночь")
+
+has_ticket = True
+has_passport = False
+if has_ticket and has_passport:
+    print("Можно лететь")
+else:
+    print("Нельзя лететь")
+
+
+balance = 100
+print ("Пополнить баланс" if balance < 500 else "Баланс в норме")
