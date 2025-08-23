@@ -260,3 +260,7 @@ x = 5
 y = 10
 x,y= y,x
 print(x,y)
+
+
+data = [("name", "Anna"), ("age", 25), ("city", "Moscow")]
+print(dict(data))

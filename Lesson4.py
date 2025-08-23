@@ -416,3 +416,23 @@ deep_copy = copy.deepcopy(original)
 deep_copy[0]=[99,100]
 print(original)
 print(deep_copy)
+
+original = [1, 2, [3, 4]]
+copy_list = original.copy()
+copy_list[0] = 99
+copy_list[-1] = [5,6]
+print(original)
+print(copy_list)
+
+import copy
+data = [{"name": "Alex"}, [10, 20]]
+copy_data = copy.deepcopy(data)
+copy_data[0]["name"] = "Anna"
+copy_data[1][0] = 99
+print(data)
+print(copy_data)
+
+items = ["A", "B", "C", "D", "E", "F"]
+del items[2]
+del items[-3:-1]
+print(items)

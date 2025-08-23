@@ -135,11 +135,11 @@ for _ in numbers:
 # Останавливается, когда сумма превысит 100.
 # Выводит итоговую сумму.
 
-sum = 0
-while sum <= 100:
-    num = int(input("Введите число:"))
-    sum += num
-    print(sum)
+# sum = 0
+# while sum <= 100:
+#     num = int(input("Введите число:"))
+#     sum += num
+#     print(sum)
 
 fruits = ["яблоко", "банан", "апельсин"]
 for fruit in fruits:
@@ -168,3 +168,16 @@ temperature = 95
 while temperature>=70:
     print(temperature)
     temperature -=5
+
+for _ in range(1,5):
+    print("Hello")
+
+grades = {"Алексей": 5, "Мария": 4, "Иван": 3, "Ольга": 5}
+for name, mark in grades.items():
+    print(f"Студент: {name}, Оценка: {mark}")
+
+
+while True:
+    result = input("Хотите продолжить? (стоп/продолжить):")
+    if "стоп" in result.lower():
+        break

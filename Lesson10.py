@@ -83,3 +83,136 @@ my_wallet = Wallet ("меня",222)
 my_wallet.add_cash()
 my_wallet.spend_cash()
 my_wallet.check_balance()
+
+class Book:
+    COVER_COLOR = "синяя"
+    PAGES = 100
+print(Book.COVER_COLOR,Book.PAGES)
+
+class Book:
+    COVER_COLOR = "синяя"
+    PAGES = 100
+
+    def __init__(self, title, author):
+        self.title=title
+        self.author=author
+my_book=Book("РОРО0", "Леонид Каневский")
+print(my_book)
+
+class Book:
+    COVER_COLOR = "синяя"
+    PAGES = 100
+
+    def __init__(self, title, author):
+        self.title=title
+        self.author=author
+
+    def info(self):
+        return f"Книга: {self.title}, {self.author}, {self.COVER_COLOR}, {self.PAGES} стр."
+my_book=Book("РОРО0", "Леонид Каневский")
+print(my_book.info())
+
+
+class Book:
+    COVER_COLOR = "синяя"
+    PAGES = 100
+
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def info(self):
+        return self.PAGES
+
+    def increase_pages(self, num):
+        print(f"Теперь в книге {self.PAGES +num} страниц")
+
+
+my_book = Book("РОРО0", "Леонид Каневский")
+print(my_book.info())
+my_book.increase_pages(3)
+
+class Robot:
+    POWER_SOURCE = "батарейка"
+
+    def __init__(self, name, model):
+        self.name = name
+        self.model = model
+
+    def introduce(self):
+        return f"Я {self.name}, модель {self.model}. Питаюсь от {self.POWER_SOURCE}."
+
+r2d2 = Robot("R2-D2", "Астромеханик")
+print(r2d2.introduce())
+
+class Robot:
+    POWER_SOURCE = "батарейка"
+
+    def __init__(self, name, model):
+        self.name = name
+        self.model = model
+
+    def introduce(self):
+        return f"Я {self.name}, модель {self.model}. Питаюсь от {self.POWER_SOURCE}."
+
+    def upgrade_power(self, source):
+        self.POWER_SOURCE = source
+        return f"Я {self.name}, модель {self.model}. Питаюсь от {self.POWER_SOURCE}."
+
+r2d2 = Robot("R2-D2", "Астромеханик")
+print(r2d2.upgrade_power("солнечная панель"))
+
+class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+    def progress(self):
+        return f"{self.name} учится в {self.grade} классе"
+my_student = Student("Oleg", 7)
+print(my_student.progress())
+
+
+
+
+class Book:
+    pass
+
+my_book = Book()
+
+class Book:
+    def __init__(self, title,author,pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+my_book = Book("1984", "Оруэлл", 328)
+print(my_book)
+
+class Book:
+    def __init__(self, title,author,pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def describe(self):
+        return f"Книга: {self.title}, Автор: {self.author}, Страниц: {self.pages}"
+
+my_book = Book("1984", "Оруэлл", 328)
+print(my_book.describe())
+
+class Book:
+    def __init__(self, title,author,pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def describe(self):
+        return f"Книга: {self.title}, Автор: {self.author}, Страниц: {self.pages}"
+
+    def is_thick(self):
+        return self.pages>300
+
+my_book = Book("1984", "Оруэлл", 328)
+print(my_book.is_thick())
+
+

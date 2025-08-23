@@ -114,3 +114,31 @@ def create_user_dict(name,age,city="Москва"):
 "age": age,
 "city": city}
 print (create_user_dict("Vova", 54))
+
+def greet(name):
+    return f"Привет, {name}!"
+print(greet("Alla"))
+
+def order(coffee, size="medium"):
+    return f"Ваш заказ: {size} {coffee}"
+print(order("капучино"))
+print(order("капучино", "250мл"))
+
+def multiply(a, b):
+    result = a*b
+    # return result
+    print(f"Результат: {a} * {b} = {result}")
+
+multiply(7, 8)
+
+def greet_decorator(func):
+    def wrapper():
+        print("Функция начинается...")
+        func()
+        print("Функция завершена!")
+    return wrapper
+
+@greet_decorator
+def say_hello():
+    print("Привет, мир!")
+say_hello()

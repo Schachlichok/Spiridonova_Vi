@@ -96,3 +96,38 @@ class Phone (Device):
 my_phone = Phone ()
 my_phone.info()
 
+
+class Shape:
+    def describe(self):
+        return f"Название фигуры: {self.NAME}, её цвет: {self.color}"
+
+
+class Circle(Shape):
+    NAME = "Круг"
+
+    def __init__(self, color, radius):
+        self.color = color
+        self.radius = radius
+
+    def area(self):
+        return self.radius ** 2 * 3.14
+
+
+class Square(Shape):
+    NAME = "Квадрат"
+
+    def __init__(self, color, side):
+        self.color = color
+        self.side = side
+
+    def area(self):
+        return self.side ** 2
+
+
+circle = Circle("желтый", 3)
+square = Square("желтый", 3)
+
+print(circle.describe())
+print(square.describe())
+print(circle.area())
+print(square.area())

@@ -278,13 +278,5 @@ data = "  REPORT_2023.txt  "
 print(data.strip().startswith("REPORT"))
 print(data.strip().endswith(".txt"))
 
-def divide(a, b):
-    assert b!=0, "b равно нулю"
-    return a/b
-print(divide(int(input ("Введите а")),int(input ("Введите b"))))
-
-def check_login(login):
-    assert len(login)>=5, "Логин должен быть минимум 5 символов"
-    assert " " not in login, "Логин должен быть без пробелов"
-    return True
-print(check_login("muxomor122"))
+filename = "report_2023.pdf"
+print(filename.startswith("report"))
